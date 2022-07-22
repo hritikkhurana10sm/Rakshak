@@ -18,7 +18,7 @@ const nodemailer = require('nodemailer');
 
 const users = require('./models/users');
 const complaints = require('./models/complaints');
-const port = 4000;
+const port = process.env.PORT || 4000;
 // const adminSeeds = require('./models/admins_seeds');
 
 app.set('view engine', 'ejs');
