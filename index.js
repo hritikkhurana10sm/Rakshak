@@ -1,9 +1,13 @@
 const express = require("express");
 const path = require("path");
+
+// file system ( sync or async)
 const fs = require('fs');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+
+// used for authentication purpose
 const cookieParser = require('cookie-parser')
 const session = require('express-session');
 
@@ -19,7 +23,7 @@ const nodemailer = require('nodemailer');
 const users = require('./models/users');
 const complaints = require('./models/complaints');
 const port = process.env.PORT || 4000;
-// const adminSeeds = require('./models/admins_seeds');
+
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
@@ -56,6 +60,8 @@ app.use('/admin', adminRoutes);
 app.use(cookieParser());
 
 app.use(fileUpload()); // important for the upload of the multiple files
+
+// express session 
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
@@ -64,7 +70,7 @@ app.use(session({
 }));
 
 
-// main.ejs
+// main.ejs  ( signup and signin page)
 app.get('/', async (req, res) => {
     res.render('main.ejs');
 });
@@ -73,14 +79,15 @@ app.get('/', async (req, res) => {
 app.post('/signUp', async (req, res) => {
 
     res.cookie('isLogined', false);
-    // req.session.isLogined=false;
+    
     var userBody = req.body;
-    console.log("userBody => ", userBody);
+    console.log("Sign Up Attemp =>", userBody);
 
     if (userBody.password) {
         var newUser = new users(
             { name: userBody.name, email: userBody.email, password: userBody.password, phone: userBody.phone }
         );
+
         await newUser.save()
             .then(newUser => {
                 console.log(`${newUser} added`);
@@ -99,11 +106,11 @@ app.post('/signUp', async (req, res) => {
 // admin sign up (one time)
 const admins  = require('./models/admins');
 
-// api to register the admin of the page
+// api to register the admin of the page (usually one time task)
 app.post('/adminRegister' , async(req ,res)=>{
 
       var userQuery = req.body;
-      console.log('Admin = > ' , userQuery);
+      console.log('Admin Registration= > ' , userQuery);
 
       var admin = new admins(
         {name : userQuery.name , email : userQuery.email , password : userQuery.password , 
@@ -126,25 +133,24 @@ app.post('/login', async (req, res) => {
 
     var userQuery = req.body;
     console.log(userQuery);
+
     try {
         if (userQuery.isAdmin) {
-            console.log('gdg');
+           
             var admin = await admins.findOne({ email: userQuery.email, password: userQuery.password }).exec();
-            // console.log(`details ${userQuery.email} ${userQuery.password} hello `);
-            console.log('admin is herererererer ' , admin);
+            
+            console.log('Admin LoggedIn =>' , admin);
             if (admin) {
-                console.log('admin is', admin);
-
+                
                 res.cookie('isLogined', true);
                 res.cookie('isAdmin', true);
                 res.cookie('adminId', admin._id);
-                console.log("************** " , req.cookies);
+                
+                console.log("Req.Cookies Admin =>" , req.cookies);
 
-                // res.redirect('/allComplaints');
                 res.redirect('/admin/home');
             }
             else {
-                console.log('gdgfafasfsf');
                 // alert(`incorrect login datails`);
                 res.send('login failed');
             }
@@ -154,13 +160,12 @@ app.post('/login', async (req, res) => {
             var user = await users.findOne({ email: userQuery.email, password: userQuery.password }).exec();
             // console.log(`details ${userQuery.email} ${userQuery.password} hello `);
             if (user) {
-                console.log('user is', user);
+                console.log('User LoggedIn=>', user);
 
                 res.cookie('isLogined', true);
                 res.cookie('userId', user._id);
                 console.log(req.cookies);
 
-                // res.redirect('/allComplaints');
                 res.redirect('/home');
             }
             else {
@@ -182,9 +187,9 @@ app.post('/login', async (req, res) => {
 app.get('/allComplaints', async (req, res) => {
     try {
         var allComplaints = await complaints.find({}).exec();
-        console.log("1 = > " , allComplaints[0]);
-       console.log("2 => " , allComplaints);
-        // res.send(allComplaints);
+        // console.log("1 = > " , allComplaints[0]);
+        // console.log("2 => " , allComplaints);
+        
         res.render('allComplaints.ejs', { allComplaints });
 
     }
@@ -208,9 +213,9 @@ app.get('/home', async (req, res) => {
             var user = await users.findById(userId).exec();
 
             var cssFiles = ['style.css.css', 'leftStage.css', 'centerStage.css', 'rightStage.css', 'home.css'];
-            // try {
+           
             var complaintsList = await complaints.find({ authorEmail: user.email }).populate('authorId');
-            console.log(complaintsList);
+            // console.log(complaintsList);
             res.render('home.ejs', { user, complaintsList, cssFiles });
 
         } catch (error) {
