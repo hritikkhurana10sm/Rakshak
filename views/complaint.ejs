@@ -27,44 +27,45 @@
 
 
                             <div class="div-group">
-                                <label for="" class="label-group">Name :</label>
+                                <label for="" class="label-group" style="font-weight: bold;">Name :</label>
                                 <%= complaint.authorName %>
                             </div>
 
                             <div class="div-group">
-                                <label for="" class="label-group"> Accused Persons :</label>
+                                <label for="" class="label-group" style="font-weight: bold;"> Accused Persons :</label>
                                 <%complaint.accused.forEach(function(acc){%>
-                                    <div><%=acc%></div>
+                                    <span><%=acc%></span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
                                 <%});%>
                             </div>
                             
 
                             <div class="div-group">
-                                <label for="" class="label-group">Date :</label>
+                                <label for="" class="label-group" style="font-weight: bold;">Date :</label>
                                 <%= complaint.date %>
                             </div>
                             <div class="div-group">
-                                <label for="types" class="label-group">Complainer Department :</label>
+                                <label for="types" class="label-group" style="font-weight: bold;">Complainer Department :</label>
                                 <%= complaint.department %>
                                     
                             </div>
                             <div class="div-group">
-                                <div><label for="" class="label-group">Complaint Description :</label></div>
+                                <span><label for="" class="label-group" style="font-weight: bold;">Complaint Description :</label></span>
                                 <%= complaint.description %>
                                     <!-- <textarea name="productDescription" id="" cols="30" rows="10" class="inputText textArea"
                             placeholder="Description" div="product-div-id"></textarea> -->
 
                             </div>
-                            <h2>Contact Details</h2>
+                            <h2 style="margin-top: 40px">Contact Details</h2>
 
                             <div class="div-group">
-                                <label for="" class="label-group">Phone No. :</label>
+                                <label for="" class="label-group" style="font-weight: bold;"> Phone No. :</label>
                                 <%= complaint.authorPhone %>
                                     <!-- <input type="text" class="inputText" name="authorPhoneNo" placeholder="default no."> -->
 
                             </div>
                             <div class="div-group">
-                                <label for="" class="label-group">Email id :</label>
+                                <label for="" class="label-group" style="font-weight: bold;">Email id :</label>
                                 <%= complaint.authorEmail%>
                                     <!-- <input type="text" class="inputText" name="authorEmail" placeholder="default email"> -->
 

@@ -13,18 +13,18 @@ mongoose
 
 const admins= require('./admins');
 
-const admin0= new admins({
-    name: 'admin1',
-    email: 'admin1@gmail.com',
-    password: 'admin1',
-    phone: '1234567890',
-    bio: 'admin here'
-});
-admin0.save()
-    .then(admin0 =>{
-        console.log(admin0);
-    })
-    .catch(err=> {
-        console.log(err);
-    });
+// const admin0= new admins({
+//     name: 'admin',
+//     email: 'admin@gmail.com',
+//     password: 'admin',
+//     phone: '1234567890',
+//     bio: 'admin here'
+// });
+// admin0.save()
+//     .then(admin0 =>{
+//         console.log(admin0);
+//     })
+//     .catch(err=> {
+//         console.log(err);
+//     });
     // console.log('qwerty');

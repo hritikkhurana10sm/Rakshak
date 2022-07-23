@@ -5,7 +5,7 @@
         <div class="center-stage">
             <div class="content-area">
                 <!-- <div class="init">init</div> -->
-                <h2>Complaint Details</h2>
+                <h2 style="text-align:center; font-size : 40px; margin : 21px">Complaint Details</h2>
                 <form action="/posting" enctype="multipart/form-data" class="product-form" id="product-form-id"
                     method="POST">
                     <div class="form-group">
@@ -19,9 +19,9 @@
                                     class="img-tot">0</span></span>
                         </div>
                         <br>
-                        <label for="img" class="label-group add-img"> Add Image </label>
+                        <label for="img" class="label-group add-img" > Add Image </label>
                         
-                        <input type="file" class="image" name="files" multiple id="img">
+                        <input type="file" class="image" name="files" multiple id="img"  style = "margin: 18px;">
                         <!-- <button  class="img-btns"> delete current image </button> -->
 
                     </div>
@@ -39,7 +39,7 @@
 
 
 
-                    <div class="form-group">
+                    <div class="form-group" style="margin-top: 70px;">
                         <label for="" class="label-group">Name :</label>
                         <input type="text" class="inputText" name="name" placeholder="Name" />
 
@@ -64,16 +64,16 @@
                     </div>
 
                     <div class="form-group">
-                        <div><label for="" class="label-group">The person(s) involved in this complaint are (fill names
+                        <div><label for="" class="label-group">The person(s) involved in this complaint are (
                                 separated with comma (',')):</label></div>
-                        <textarea name="accused" id="" cols="30" rows="5" class="inputText textArea"
+                        <textarea style = "margin: 18px 9px;"name="accused" id="" cols="30" rows="5" class="inputText textArea"
                             placeholder="Accused" form="product-form-id"></textarea>
 
                     </div>
 
                     <div class="form-group">
                         <div><label for="" class="label-group">Complaint Description :</label></div>
-                        <textarea name="description" id="" cols="30" rows="5" class="inputText textArea"
+                        <textarea style = "margin: 18px 9px;"name="description" id="" cols="30" rows="5" class="inputText textArea"
                             placeholder="Description" form="product-form-id"></textarea>
 
                     </div>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="form-group">
                         <!-- <input type="submit" class="submit-btn"> -->
-                        <button class="submit-btn">Post</button>
+                        <button class="submit-btn" style="background: gold;">Post</button>
                     </div>
 
                 </form>

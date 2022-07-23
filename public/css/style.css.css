@@ -5,6 +5,7 @@
 }
 body{
     background-color: #afc4da;;
+    
 }
 .navbar{
     display: flex;
@@ -15,6 +16,7 @@ body{
 	background: #FF416C;
 	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
 	background: linear-gradient(to right, #FF4B2B, #FF416C);
+    background: linear-gradient(198deg, #cfc768, #ffe668);
     height: 10vh;
     width: 100%;
     position: sticky;
@@ -44,8 +46,10 @@ body{
 .emergency{
     background: none;
     font-size: 100%;
-    border: 1px solid black;
+    border: none;
     cursor: pointer;
+    color : #d56200;
+    font-weight: 700;
 }
 .navlist{
     position: absolute;
@@ -59,10 +63,14 @@ body{
 
 .navlist ul li a{
     /* padding: 5px; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 5px 10px;
     cursor: pointer;
     text-decoration: none;
+    color : #084444;
+    font-weight: 700;
+    
+
 }
 .navlist ul li a:hover{
     text-decoration: underline;
@@ -74,5 +82,5 @@ body{
     /* height: 190vh;
     overflow: hidden; */
     /* border: 1px solid black; */
-    background: #afc4da;
+    background: white;
 }

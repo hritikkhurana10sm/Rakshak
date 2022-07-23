@@ -106,7 +106,8 @@ app.post('/adminRegister' , async(req ,res)=>{
       console.log('Admin = > ' , userQuery);
 
       var admin = new admins(
-        {name : userQuery.name , email : userQuery.email , password : userQuery.password}
+        {name : userQuery.name , email : userQuery.email , password : userQuery.password , 
+          bio : "Free From Fear" , department : "Security Officer" , phone : "+91-8795863257" }
       );
 
       await admin.save()
@@ -127,8 +128,10 @@ app.post('/login', async (req, res) => {
     console.log(userQuery);
     try {
         if (userQuery.isAdmin) {
+            console.log('gdg');
             var admin = await admins.findOne({ email: userQuery.email, password: userQuery.password }).exec();
             // console.log(`details ${userQuery.email} ${userQuery.password} hello `);
+            console.log('admin is herererererer ' , admin);
             if (admin) {
                 console.log('admin is', admin);
 
@@ -141,6 +144,7 @@ app.post('/login', async (req, res) => {
                 res.redirect('/admin/home');
             }
             else {
+                console.log('gdgfafasfsf');
                 // alert(`incorrect login datails`);
                 res.send('login failed');
             }

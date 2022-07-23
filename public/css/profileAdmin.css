@@ -131,7 +131,7 @@
 }
 .editi{
     padding-top: 20px;
-    background-color: lightslategray;
+    background-color: lightgoldenrodyellow;
     width: 100%;
     height: 100%;
 }
@@ -176,7 +176,7 @@
 .edit-cover-pic-label{
     z-index: 2;
     position: absolute;
-    background: gray;
+    background: white;
     /* left: 60%; */
     top: 140px;
     right: 2%;
@@ -185,7 +185,7 @@
 .edit-display-pic-label{
     z-index: 2;
     position: absolute;
-    background: gray;
+    background: white;
     left: 58%;
     top: 210px;
     font-size: 115%;
