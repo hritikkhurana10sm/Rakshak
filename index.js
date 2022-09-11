@@ -98,7 +98,8 @@ app.post('/signUp', async (req, res) => {
         res.redirect('/');
     }
     else {
-        document.alert(`passwords do not match`);
+        // document.alert(`passwords do not match`);
+         res.redirect('/')
     }
 });
 
