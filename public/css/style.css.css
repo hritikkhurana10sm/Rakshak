@@ -1,11 +1,14 @@
 *{
     margin: 0px;
     padding: 0px;
-    color: black;
+    color: #d1b5a1;
 }
 body{
     background-color: white;
-    
+    font-family: system-ui;
+    background-image: url('/images/trt.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .navbar{
     display: flex;
@@ -13,10 +16,11 @@ body{
     align-items: center;
     /* background-color: teal; */
     
-	background: #FF416C;
+	/* background: #FF416C;
 	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
 	background: linear-gradient(to right, #FF4B2B, #FF416C);
-    background: linear-gradient(198deg, #cfc768, #ffe668);
+    background: linear-gradient(198deg, #cfc768, #ffe668); */
+    background-color: #000000c2;
     height: 10vh;
     width: 100%;
     position: sticky;
@@ -67,8 +71,10 @@ body{
     margin: 5px 10px;
     cursor: pointer;
     text-decoration: none;
-    color : #084444;
-    font-weight: 700;
+    color: white;
+    font-weight: 200;
+    font-size: 18px;
+    font-family: initial;
     
 
 }
@@ -82,5 +88,5 @@ body{
     /* height: 190vh;
     overflow: hidden; */
     /* border: 1px solid black; */
-    background: white;
+    /* background: white; */
 }

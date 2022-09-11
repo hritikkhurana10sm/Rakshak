@@ -2,7 +2,7 @@
 
 .user-profile{
     
-    background-color: rgb(249, 249, 168);
+    background-color: rgba(165, 42, 42, 0.356);
     /* background-color: rgb(248, 148, 148); */
     position: relative;
     border-radius: 15px;
@@ -41,7 +41,7 @@
 .edit-cover-pic-label{
     z-index: 2;
     position: absolute;
-    background: gray;
+    /* background: gray; */
     /* left: 60%; */
     top: 170px;
     right: 2%;
@@ -50,7 +50,7 @@
 .edit-display-pic-label{
     z-index: 2;
     position: absolute;
-    background: gray;
+    /* background: gray; */
     left: 58%;
     top: 252px;
     font-size: 115%;
@@ -58,7 +58,7 @@
 
 .user-details{    
     border-radius: 15px;
-    background-color: lightyellow;
+    /* background-color: lightyellow; */
     /* background-color: rgb(248, 148, 148); */
     width: 90%;
     margin: 20px auto;
@@ -69,31 +69,36 @@
     font-size: 35px;
     margin-top: 100px;
     margin-bottom: 20px;
-
+    color: lightgoldenrodyellow;
 }
 
 .bio{
     text-align: center;
     font-size: 20px;
+    color: lightgoldenrodyellow;
 }
 .edit-user-details{
-    background-color: lightcoral;
+    background-color: brown;
     /* font-weight: bold; */
-    border: 2px solid white;
-    width: 30%;
+    /* border: 2px solid white; */
+    width: 20%;
     font-size: 16px;
     position: relative;
-    height: 30px;
+    height: 35px;
     border-radius: 12px;
     left: 40%;
+    border : none;
     margin-bottom: 10px;
+    color : lightgoldenrodyellow;
 }
 .div-group{
     padding: 10px;
     font-size: 20px;
 }
 
-
+hr{
+    color : brown;
+}
 
 
 
@@ -131,7 +136,7 @@
 }
 .editi{
     padding-top: 20px;
-    background-color: #ffffbcfa;
+    background-color: #fafad2;
     width: 100%;
     height: 100%;
     overflow-y: auto;
@@ -139,7 +144,7 @@
 
 .user-profile-editor{
     
-    background-color: lightyellow;
+    background-color: #a52a2a24;
     position: relative;
     border-radius: 15px;
     height: 340px;
@@ -151,13 +156,13 @@
     display: inline-block;
     position: relative;
     width: 100%;
-    /* background-color: lightseagreen; */
+    /* background-color: lightgoldenrodyellow; */
     height: 170px;
     /* z-index: 3; */
 }
 .display-pic-editor{
     top: 28px;
-    background-color: lightgray;
+    /* background-color: lightgoldenrodyellow; */
     /* box-sizing: border-box; */
     height: 120px;
     z-index: 2;
@@ -177,7 +182,7 @@
 .edit-cover-pic-label{
     z-index: 2;
     position: absolute;
-    background: white;
+    /* background: white; */
     /* left: 60%; */
     top: 140px;
     right: 2%;
@@ -186,7 +191,7 @@
 .edit-display-pic-label{
     z-index: 2;
     position: absolute;
-    background: white;
+    /* background: white; */
     left: 48%;
     top: 89px;
     font-size: 115%;
@@ -220,7 +225,7 @@
 }
 .user-details-editor{    
     border-radius: 15px;
-    background-color: lightyellow;
+    background-color: lightgoldenrodyellow;
     /* background-color: rgb(248, 148, 148); */
     width: 90%;
     margin: 20px auto;
@@ -233,7 +238,7 @@
     font-size: 15px;
 } */
 .editor-btns{
-    background-color: lightcoral;
+    /* background-color: lightcoral; */
     width: 15%;
     height: 5%;
     border-radius: 10px;
